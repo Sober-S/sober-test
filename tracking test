@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Global Logistics Tracking</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        input[type="button"] {
+            padding: 12px 20px;
+            font-size: 16px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #YQContainer {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Global Shipment Tracking</
