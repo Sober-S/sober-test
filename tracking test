@@ -4,48 +4,39 @@
     <title>Global Logistics Tracking</title>
     <meta charset="UTF-8">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+        body 
 
-        .container {
-            max-width: 900px;
-            margin: 80px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
 
-        h1 {
-            margin-bottom: 30px;
-        }
+<!--单号输入框。-->
+<input type="text" id="YQNum" maxlength="50" />
+<!--用于调用脚本方法的按钮。-->
+<input type="button" value="TRACK" onclick="doTrack()" />
+<!--用于显示查询结果的容器。-->
+<div id="YQContainer"></div>
 
-        input[type="text"] {
-            width: 60%;
-            padding: 12px;
-            font-size: 16px;
-        }
-
-        input[type="button"] {
-            padding: 12px 20px;
-            font-size: 16px;
-            background: black;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        #YQContainer {
-            margin-top: 40px;
-        }
-    </style>
-</head>
-
+<!--脚本代码可放于页面底部，等到页面最后执行。-->
+<script type="text/javascript" src="//www.17track.net/externalcall.js"></script>
+<script type="text/javascript">
+function doTrack() {
+var num = document.getElementById("YQNum").value;
+if(num==="") {
+    alert("Enter your number."); 
+    return;
+}
+YQV5.trackSingle({
+    //必须，指定承载内容的容器ID。
+    YQ_ContainerId:"YQContainer",
+    //可选，指定查询结果高度，最大为800px，默认为560px。
+    YQ_Height:560,
+    //可选，指定运输商，默认为自动识别。
+    YQ_Fc:"0",
+    //可选，指定UI语言，默认根据浏览器自动识别。
+    YQ_Lang:"en",
+    //必须，指定要查询的单号。
+    YQ_Num:num
+});
+}
+</script>
 <body>
 
 <div class="container">
